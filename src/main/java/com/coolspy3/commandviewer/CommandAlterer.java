@@ -28,7 +28,7 @@ public class CommandAlterer implements StyledTextAcceptor {
         String commandText = content.substring(commandMatcher.start()+1);
         beforeText += commandText.substring(0, commandText.indexOf("/"));
         commandText = commandText.substring(commandText.indexOf("/"));
-        StringTextComponent comp = new StringTextComponent(beforeText);
+        ITextComponent comp = new StringTextComponent(beforeText).withStyle(style);
 
         Matcher noSpaceMatcher = noSpacePattern.matcher(commandText);
         noSpaceMatcher.matches();
